@@ -1,0 +1,77 @@
+.toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  .lock-button {
+    margin-right: 8px;
+  }
+}
+
+.dashboard-container {
+  padding: 20px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 64px);
+}
+
+.grid-stack {
+  background: transparent;
+}
+
+.grid-stack-item-content {
+  background: transparent;
+  overflow: visible !important;
+
+  .widget-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    mat-card-header {
+      background-color: #f8f9fa;
+      padding: 16px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    mat-card-title {
+      font-size: 16px;
+      font-weight: 500;
+      color: #333;
+    }
+
+    mat-card-content {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px !important;
+
+      .widget-content {
+        font-size: 24px;
+        font-weight: 300;
+        color: #666;
+        text-align: center;
+        white-space: pre-line;
+      }
+    }
+  }
+}
+
+.grid-stack-item {
+  &.ui-draggable-dragging,
+  &.ui-resizable-resizing {
+    .widget-card {
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
